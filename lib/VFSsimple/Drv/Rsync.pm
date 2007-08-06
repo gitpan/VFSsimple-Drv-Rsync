@@ -6,7 +6,7 @@ use base qw(VFSsimple::Base);
 use URI ();
 use File::Temp qw(tempfile);
 
-our $VERSION = '0.01';
+our $VERSION = '0.02';
 
 =head1 NAME
 

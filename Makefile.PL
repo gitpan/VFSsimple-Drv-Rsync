@@ -10,6 +10,7 @@ WriteMakefile(
     NAME	 => "VFSsimple::Drv::$modulename",
     AUTHOR   => 'Olivier Thauvin <nanardon@nanardon.zarb.org>',
     VERSION_FROM => "lib/VFSsimple/Drv/$modulename.pm",
+    PREREQ_PM => { 'VFSsimple::Base' => undef, },
 );
 
 package MY;
