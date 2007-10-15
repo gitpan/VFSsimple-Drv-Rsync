@@ -6,7 +6,7 @@ use base qw(VFSsimple::Base);
 use URI ();
 use File::Temp qw(tempfile);
 
-our $VERSION = '0.02';
+our $VERSION = '0.03';
 
 =head1 NAME
 
@@ -41,6 +41,13 @@ sub drv_copy {
     my $res = $? >> 8;
     if ($res) { return }
     return $dest;
+}
+
+sub drv_exists {
+    my ($self, $file) = @_;
+    system('rsync', '-q', "$self->{root}/$file");
+    my $res = $? >> 8;
+    return ($res eq 0);
 }
 
 1;
